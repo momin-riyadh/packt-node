@@ -8,14 +8,14 @@
 <main>
     <% if (prods.length > 0) { %>
         <div class="grid">
-            <% for (let product of prods) { %>
+            <% const recentProducts = prods.slice(0, -1).reverse(); /* Change 3 to the number of products you want to display */ %>
+            <% for (let product of recentProducts) { %>
                 <article class="card product-item">
                     <header class="card__header">
                         <h1 class="product__title"><%= product.title %></h1>
                     </header>
                     <div class="card__image">
-                        <img src="https://picsum.photos/300/200.jpg"
-                             alt="A Book">
+                        <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
                     </div>
                     <div class="card__content">
                         <h2 class="product__price">$<%= product.price %></h2>

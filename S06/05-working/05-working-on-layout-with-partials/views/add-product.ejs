@@ -13,7 +13,7 @@
             <div class="col-md-6 mx-auto">
                 <div class="card">
                     <div class="card-body">
-                        <form class="product-form" action="/admin/add-product" method="POST">
+                        <form class="product-form" action="/admin/add-product" method="POST" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="title">Title</label>
                                 <input class="form-control" type="text" name="title" id="title" required>
@@ -29,6 +29,13 @@
                                           rows="5" maxlength="50" required></textarea>
 
                             </div>
+
+                            <!--  -->
+                            <div class="form-group">
+                                <label for="image">Book Image</label>
+                                <input class="form-control" type="file" name="image" id="image" accept="image/*">
+                            </div>
+
 
                             <button class="btn" type="submit">Add Product</button>
                         </form>
